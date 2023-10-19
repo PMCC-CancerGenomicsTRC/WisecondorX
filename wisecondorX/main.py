@@ -411,7 +411,7 @@ def main():
         func = args.func
     except AttributeError:
         parser.error("too few arguments")
-    func(args)1
+    func(args)
 
 
 if __name__ == '__main__':
