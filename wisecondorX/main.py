@@ -407,7 +407,11 @@ def main():
                         datefmt='%Y-%m-%d %H:%M:%S',
                         level=getattr(logging, args.loglevel.upper(), None))
     logging.debug('args are: {}'.format(args))
-    args.func(args)
+    try:
+        func = args.func
+    except AttributeError:
+        parser.error("too few arguments")
+    func(args)1
 
 
 if __name__ == '__main__':
